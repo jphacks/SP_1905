@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>28594162351-bdo3ssfc13gfud4l9fknb1ej25pr8kqs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.28594162351-bdo3ssfc13gfud4l9fknb1ej25pr8kqs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfVYwWCrN6odb-WrqZ2nka_PGZRSylQbk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>28594162351</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fuya.office-hunting</string>
+	<key>PROJECT_ID</key>
+	<string>office-hunting</string>
+	<key>STORAGE_BUCKET</key>
+	<string>office-hunting.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:28594162351:ios:a55ce4a91bbdaa268f625a</string>
+	<key>DATABASE_URL</key>
+	<string>https://office-hunting.firebaseio.com</string>
+</dict>
+</plist>
