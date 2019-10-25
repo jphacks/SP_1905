@@ -1,0 +1,16 @@
+name: office-hunting
+fileGroups:
+  - configs
+configFiles:
+  Debug: configs/Debug.xcconfig
+  Release: configs/Release.xcconfig
+targets:
+  office-hunting:
+    type: application
+    platform: iOS
+    sources: office-hunting
+    configFiles:
+      Debug: configs/office-hunting-Debug.xcconfig
+      Release: configs/office-hunting-Release.xcconfig
+    settings:
+      CURRENT_PROJECT_VERSION:
