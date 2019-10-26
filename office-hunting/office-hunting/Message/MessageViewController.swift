@@ -16,7 +16,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setNavImage()
+        setNavImage()
         
         self.messageImage = UIImage(named: "message.png")
         self.centerImage = UIImageView(image: messageImage)
@@ -65,12 +65,11 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     
-    
-//    func setNavImage(){
-//        self.messageImage = UIImage(named: "message.png")
-//        self.centerImage = UIImageView(image: messageImage)
-//        self.navigationItem.titleView = centerImage
-//    }
+
+    func setNavImage(){
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
+    }
     
     /*
      // MARK: - Navigation

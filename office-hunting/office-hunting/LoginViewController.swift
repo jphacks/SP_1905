@@ -12,10 +12,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @IBAction func toMessage(_ sender: Any) {
+        let sb = UIStoryboard(name: "TinderStoryboard", bundle: nil)
+        let tinderViewController = sb.instantiateInitialViewController() as! TinderViewController
+        
+        self.navigationController?.pushViewController(tinderViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

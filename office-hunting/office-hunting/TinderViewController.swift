@@ -17,6 +17,7 @@ class TinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.kolodaView.layer.cornerRadius = 15
         self.kolodaView.backgroundColor = UIColor.black
         kolodaView.dataSource = self
@@ -27,6 +28,7 @@ class TinderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
