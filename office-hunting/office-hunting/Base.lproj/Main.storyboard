@@ -19,6 +19,9 @@
                                 <rect key="frame" x="37" y="339" width="341" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Rectangle 3"/>
+                                <connections>
+                                    <segue destination="1r3-U6-jyE" kind="show" id="HtJ-Rw-8W8"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="オフィカツ" translatesAutoresizingMaskIntoConstraints="NO" id="3zf-vl-kDp">
                                 <rect key="frame" x="78" y="145" width="240" height="128"/>
@@ -49,6 +52,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2v-eE-LRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="119" y="117"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="yuO-VN-Hpe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Message" id="1r3-U6-jyE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1ET-v2-H2E"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfs-wz-Tof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="96"/>
         </scene>
     </scenes>
     <resources>
