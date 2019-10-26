@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     var messageImage: UIImage!
     var centerImage: UIImageView!
     var msgData:[String] = ["ff"]
+    let db = Firestore.firestore()
     @IBOutlet weak var msgTable: UITableView!
     @IBOutlet weak var tinderButton: UIBarButtonItem!
+    var dmodel = [dataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,50 +38,68 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "door.png")?.withRenderingMode(.alwaysOriginal),
-        style: .plain,
-        target: self,
-        action: nil)
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: nil)
+        getData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.msgData.count == 0 {
-          return 1
+        if self.dmodel.count == 0 {
+            return 1
         }else{
-          return 4//self.msgData.count
+            return self.dmodel.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.allowsSelection = false
-        if self.msgData.count == 0 {
-          tableView.isScrollEnabled = false
-          let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as! EmptyTableViewCell
-          return cell
+        if dmodel.count == 0 {
+            tableView.isScrollEnabled = false
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as! EmptyTableViewCell
+            return cell
         }else{
-          let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath as IndexPath) as! MessageTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath as IndexPath) as! MessageTableViewCell
             cell.companyName.text = "工藤株式会社"
             cell.companyName.font = UIFont(name: "Roboto-Bold", size: 14)
-            cell.companySub.text = "ようこそ"
+            if dmodel.count > 0 {
+                cell.companySub.text = (dmodel[indexPath.row].adCompanyTitle ?? "") + "が届きました"
+            }
             cell.postDate.text = "2019/10/26"
             cell.companyIcon.image = UIImage(named: "dummyicon.png")
-          return cell
+            return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       if self.msgData.count == 0 {
-         return 760
-       }else{
-        return 190
+        if self.dmodel.count == 0 {
+            return 760
+        }else{
+            return 190
         }
         
-       // return 44
+        // return 44
     }
     
     
-
+    
     func setNavImage(){
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    func getData(){
+        db.collection("msg").getDocuments() { (querySnapshot, err) in
+            
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.get("adCompanyTitle")
+                    self.dmodel.append(dataModel(adCompanyTitle: data as! String))
+                }
+                self.msgTable.reloadData()
+            }
+        }
     }
     
     
