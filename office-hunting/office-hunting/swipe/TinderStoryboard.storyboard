@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22w-MC-wDY" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="41.5" y="188" width="331" height="435"/>
+                                <rect key="frame" x="41.5" y="134.5" width="331" height="537.5"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKb-Ix-2q4">
                                 <rect key="frame" x="41" y="712" width="107" height="139"/>
@@ -37,16 +37,34 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="22w-MC-wDY" firstAttribute="height" secondItem="uTT-P7-w71" secondAttribute="height" multiplier="6:10" id="6ZS-zG-5di"/>
-                            <constraint firstItem="22w-MC-wDY" firstAttribute="centerX" secondItem="uTT-P7-w71" secondAttribute="centerX" id="Il1-lm-XVJ"/>
-                            <constraint firstItem="22w-MC-wDY" firstAttribute="width" secondItem="uTT-P7-w71" secondAttribute="width" multiplier="8:10" id="XqF-M4-8Oi"/>
-                            <constraint firstItem="22w-MC-wDY" firstAttribute="centerY" secondItem="uTT-P7-w71" secondAttribute="centerY" multiplier="9:10" id="jIb-Oa-aoA"/>
+                            <constraint firstItem="22w-MC-wDY" firstAttribute="height" secondItem="qCW-JE-i9d" secondAttribute="height" multiplier="6:10" id="6ZS-zG-5di"/>
+                            <constraint firstItem="22w-MC-wDY" firstAttribute="centerX" secondItem="YmU-GI-dT2" secondAttribute="centerX" id="Il1-lm-XVJ"/>
+                            <constraint firstItem="22w-MC-wDY" firstAttribute="width" secondItem="qCW-JE-i9d" secondAttribute="width" multiplier="8:10" id="XqF-M4-8Oi"/>
+                            <constraint firstItem="22w-MC-wDY" firstAttribute="centerY" secondItem="qCW-JE-i9d" secondAttribute="centerY" multiplier="9:10" id="jIb-Oa-aoA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uTT-P7-w71"/>
+                        <viewLayoutGuide key="safeArea" id="YmU-GI-dT2"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="hfE-9Y-Gpn">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="36d-zR-AaH">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QEX-Mm-BlH">
+                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="person.fill" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="PDT-7z-Hov">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Afy-rZ-Ayy">
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="message"/>
+                                <connections>
+                                    <segue destination="NVV-p6-Zto" kind="presentation" modalPresentationStyle="fullScreen" id="nAn-bu-oVf"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -60,21 +78,28 @@
         <!--Message-->
         <scene sceneID="BL6-cJ-IUv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Message" id="NVV-p6-Zto" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Message" id="NVV-p6-Zto" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rZo-6D-2zk"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd0-al-xzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906" y="94"/>
+            <point key="canvasLocation" x="3120" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mEB-s9-MR7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oml-Jc-fl0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DPY-l3-qUn">
+                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DPY-l3-qUn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.42352941179999998" green="0.70980392160000005" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DAd-at-CZe">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.42352941179999998" green="0.70980392160000005" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7ee-aY-Xta" kind="relationship" relationship="rootViewController" id="6kW-yQ-dDY"/>
                     </connections>
@@ -86,6 +111,8 @@
     </scenes>
     <resources>
         <image name="good.png" width="117" height="147"/>
+        <image name="message" width="22" height="22"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="uun.png" width="117" height="147"/>
     </resources>
 </document>
