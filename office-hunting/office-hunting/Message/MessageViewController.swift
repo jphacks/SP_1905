@@ -72,7 +72,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.msgData.count == 0 {
+        if self.dmodel.count == 0 {
             return 760
         }else{
             return 190
