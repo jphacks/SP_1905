@@ -71,7 +71,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="admsg"/>
                                 <connections>
-                                    <action selector="postAdminMsg:" destination="7gQ-cJ-I6Y" eventType="touchUpInside" id="e5k-ju-s6O"/>
+                                    <action selector="postAdminMsg:" destination="7gQ-cJ-I6Y" eventType="touchUpInside" id="Sf3-Ef-Gmg"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="雰囲気選択" textAlignment="center" minimumFontSize="17" background="textform" translatesAutoresizingMaskIntoConstraints="NO" id="1zS-nm-fKf">
@@ -80,7 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="企業名" textAlignment="center" minimumFontSize="17" background="textform" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-mv-K1R">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="タイトル" textAlignment="center" minimumFontSize="17" background="textform" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-mv-K1R">
                                 <rect key="frame" x="81" y="294" width="252" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -111,9 +111,9 @@
                     <navigationItem key="navigationItem" id="r6z-EN-cjr"/>
                     <connections>
                         <outlet property="adAtmosphereImg" destination="1zS-nm-fKf" id="e1e-ZR-NaC"/>
-                        <outlet property="adCompanyName" destination="qbq-mv-K1R" id="ndW-vC-oEe"/>
+                        <outlet property="adCompanyTitle" destination="qbq-mv-K1R" id="1y9-B7-eeo"/>
                         <outlet property="adTextForm" destination="qWg-Kd-SsP" id="dFZ-sg-i42"/>
-                        <outlet property="adUrl" destination="RkB-PZ-gOw" id="y0b-10-yfb"/>
+                        <outlet property="adUrl" destination="RkB-PZ-gOw" id="IVX-my-4nf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MB-8g-eCJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

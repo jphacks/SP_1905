@@ -14,7 +14,7 @@ class AdminPostformViewController: UIViewController {
     
     
     @IBOutlet weak var adAtmosphereImg: UITextField!
-    @IBOutlet weak var adCompanyName: UITextField!
+    @IBOutlet weak var adCompanyTitle: UITextField!
     @IBOutlet weak var adTextForm: UITextField!
     @IBOutlet weak var adUrl: UITextField!
     
@@ -27,20 +27,43 @@ class AdminPostformViewController: UIViewController {
     }
     
     @IBAction func postAdminMsg(_ sender: UIButton) {
+        postData()
+        resetForm()
+    }
+    
+    func postData(){
+        guard let adCompanyTitle = adCompanyTitle.text else {
+            return
+        }
+        
+        guard let adTextForm = adTextForm.text else {
+            return
+        }
+        
+        guard let adUrl = adUrl.text else {
+            return
+        }
+        
+        
         let origdata: [String: Any] = [
-            "CompanyName": adCompanyName ?? "nil",
-            "adTextForm": adTextForm ?? "nil",
-            "URL": adUrl ?? "nil"
+            "adCompanyTitle": adCompanyTitle,
+            "adTextForm": adTextForm,
+            "adUrl": adUrl
         ]
-        if adCompanyName != nil && adTextForm != nil || adUrl != nil {
-            db.collection("msg").addDocument(data: origdata) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                }
+        
+        db.collection("msg").addDocument(data: origdata) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
         }
+    }
+    
+    func resetForm(){
+        adCompanyTitle.text = ""
+        adTextForm.text = ""
+        adUrl.text = ""
     }
     
 }
@@ -48,7 +71,7 @@ class AdminPostformViewController: UIViewController {
 extension AdminPostformViewController: UITextFieldDelegate {
     func setDelegate(){
         adAtmosphereImg.delegate = self
-        adCompanyName.delegate = self
+        adCompanyTitle.delegate = self
         adTextForm.delegate = self
         adUrl.delegate = self
     }
