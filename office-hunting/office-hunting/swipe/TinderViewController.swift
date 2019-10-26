@@ -17,7 +17,6 @@ class TinderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.kolodaView.layer.cornerRadius = 15
         kolodaView.dataSource = self
         kolodaView.delegate = self
@@ -28,9 +27,8 @@ class TinderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.rightBarButtonItem = makeRightButton()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,14 +44,6 @@ class TinderViewController: UIViewController {
         return button
     }
     
-    func makeRightButton() -> UIBarButtonItem {
-        let buttonItem = UIBarButtonItem(image: UIImage(named: "message")?.withRenderingMode(.alwaysOriginal),
-        style: .plain,
-        target: self,
-        action: nil)
-        
-        return buttonItem
-    }
     
     @IBAction func leftButton(_ sender: Any) {
         kolodaView.swipe(.left)
