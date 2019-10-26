@@ -12,16 +12,17 @@ class TinderViewController: UIViewController {
     var index = 0
     
     @IBOutlet weak var kolodaView: KolodaView!
-    //var imageNameArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
+    var imageNameArray = ["Group36.png", "Group37.png", "Group38.png", "Group39.png", "Group40.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         self.kolodaView.layer.cornerRadius = 15
-        self.kolodaView.backgroundColor = UIColor.black
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        self.navigationItem.titleView = makeMidButton()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -29,11 +30,29 @@ class TinderViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.rightBarButtonItem = makeRightButton()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func makeMidButton() -> UIButton{
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setBackgroundImage(UIImage(named: "door"), for: .normal)
+        
+        return button
+    }
+    
+    func makeRightButton() -> UIBarButtonItem {
+        let buttonItem = UIBarButtonItem(image: UIImage(named: "message")?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: self,
+        action: nil)
+        
+        return buttonItem
     }
     
     @IBAction func leftButton(_ sender: Any) {
@@ -49,7 +68,7 @@ class TinderViewController: UIViewController {
 extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
     //枚数
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return 10
+        return imageNameArray.count
     }
     
     //ドラッグのスピード
@@ -62,25 +81,12 @@ extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
         //        let view = UIView(frame: koloda.bounds)
         //        view.backgroundColor = randomColor()
         //        return view
-        /*for subview in koloda.subviews{
-         subview.removeFromSuperview()
-         }*/
-        /*
-         let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-         let redView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-         redView.backgroundColor = UIColor.red
-         redView.alpha = 0
-         let blueView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-         blueView.backgroundColor = UIColor.red
-         blueView.alpha = 0
-         
-         backgroundView.backgroundColor = UIColor.black
-         
-         backgroundView.addSubview(redView)
-         backgroundView.addSubview(blueView)
-         */
-        let balloonView = SpeechBalloonView(frame: kolodaView.frame)
-        return balloonView
+        let imageView = UIImageView(frame: koloda.bounds)
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: imageNameArray[index])
+        koloda.addSubview(imageView)
+        imageView.backgroundColor = .clear
+        return imageView
     }
     
     //カードの色を指定、今回はランダム
@@ -125,17 +131,22 @@ extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
         return true
     }
     
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        
+        return Bundle.main.loadNibNamed("CustomOverlayView", owner: self, options: nil)![0] as? OverlayView
+    }
+    
     //ドラッグ度合い
     func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
         //print(direction, finishPercentage)
-        /*
-         if (direction == SwipeResultDirection.right) {
-         koloda.viewForCard(at: self.index)?.backgroundColor = UIColor(displayP3Red: finishPercentage / CGFloat(100), green: 0, blue: 0, alpha: finishPercentage / CGFloat(50) )
+         /*if (direction == SwipeResultDirection.right) {
+            //let image = UIImageView(image: UIImage(named: "good.png"))
+            //koloda.viewForCard(at: self.index)?.addSubview(image)
+            //= UIColor(displayP3Red: finishPercentage / CGFloat(100), green: 0, blue: 0, alpha: finishPercentage / CGFloat(50) )
          } else {
          koloda.viewForCard(at: self.index)?.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: finishPercentage / CGFloat(100), alpha: finishPercentage / CGFloat(50))
          }
-         */
-        
+        */
     }
     
     //dtagの方向など
