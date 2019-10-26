@@ -13,6 +13,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     var centerImage: UIImageView!
     var msgData:[String] = ["ff"]
     @IBOutlet weak var msgTable: UITableView!
+    @IBOutlet weak var tinderButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,14 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         self.msgTable.register(UINib(nibName: "EmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
         self.msgTable.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "msgCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "door.png")?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: self,
+        action: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,8 +77,8 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
 
     func setNavImage(){
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-
     }
+    
     
     /*
      // MARK: - Navigation

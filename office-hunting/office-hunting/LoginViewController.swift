@@ -8,10 +8,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // Do any additional setup after loading the view.
     }
@@ -20,21 +20,21 @@ class LoginViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    @IBAction func toMessage(_ sender: Any) {
-        let sb = UIStoryboard(name: "TinderStoryboard", bundle: nil)
-        let tinderViewController = sb.instantiateInitialViewController() as! TinderViewController
-        
-        self.navigationController?.pushViewController(tinderViewController, animated: true)
-    }
     
+//    @IBAction func tapLogin(_ sender: UIButton) {
+//        let vc = TinderViewController()
+//        //let nav = UINavigationController(rootViewController: vc)
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true, completion: nil)
+//    }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
