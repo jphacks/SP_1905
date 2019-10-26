@@ -9,6 +9,11 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var companyIcon: UIImageView!
+    @IBOutlet weak var companyName: UILabel!
+    @IBOutlet weak var companySub: UILabel!
+    @IBOutlet weak var postDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +23,10 @@ class MessageTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func tapMessageDetail(_ sender: UIButton) {
+        print("tap")
     }
     
 }

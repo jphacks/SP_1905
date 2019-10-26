@@ -11,7 +11,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     var messageImage: UIImage!
     var centerImage: UIImageView!
-    var msgData:[String] = []
+    var msgData:[String] = ["ff"]
     @IBOutlet weak var msgTable: UITableView!
     
     override func viewDidLoad() {
@@ -33,19 +33,23 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         if self.msgData.count == 0 {
           return 1
         }else{
-          return self.msgData.count
+          return 4//self.msgData.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //test
+        tableView.allowsSelection = false
         if self.msgData.count == 0 {
           tableView.isScrollEnabled = false
-          tableView.allowsSelection = false
           let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as! EmptyTableViewCell
           return cell
         }else{
           let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath as IndexPath) as! MessageTableViewCell
+            cell.companyName.text = "工藤株式会社"
+            cell.companyName.font = UIFont(name: "Roboto-Bold", size: 14)
+            cell.companySub.text = "ようこそ"
+            cell.postDate.text = "2019/10/26"
+            cell.companyIcon.image = UIImage(named: "dummyicon.png")
           return cell
         }
     }
@@ -53,9 +57,11 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        if self.msgData.count == 0 {
          return 760
-       }
+       }else{
+        return 190
+        }
         
-        return 44
+       // return 44
     }
     
     
