@@ -35,6 +35,9 @@
                                 <rect key="frame" x="66" y="456" width="283" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Rectangle 4"/>
+                                <connections>
+                                    <segue destination="51c-Df-CEJ" kind="presentation" modalPresentationStyle="fullScreen" id="JSb-EQ-PAB"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="会員登録する" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-Ck-muQ">
                                 <rect key="frame" x="99" y="432" width="216" height="107"/>
@@ -60,7 +63,15 @@
                 <viewControllerPlaceholder storyboardName="TinderStoryboard" id="cZy-yy-mSt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXP-aE-bde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="120"/>
+            <point key="canvasLocation" x="1683" y="29"/>
+        </scene>
+        <!--AdminStart-->
+        <scene sceneID="SEA-Dd-5ql">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminStart" id="51c-Df-CEJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kie-Sf-oG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="256"/>
         </scene>
     </scenes>
     <resources>
