@@ -12,7 +12,8 @@ struct dataModel {
     var adTextForm: String?
     var adUrl: String?
     
-    init(adCompanyTitle: String) {
+    init(adCompanyTitle: String, adTextForm: String) {
         self.adCompanyTitle = adCompanyTitle
+        self.adTextForm = adTextForm
     }
 }

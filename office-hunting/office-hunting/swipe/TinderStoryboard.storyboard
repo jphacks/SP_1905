@@ -90,7 +90,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oml-Jc-fl0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DPY-l3-qUn">
+                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DPY-l3-qUn" customClass="CustomViewController" customModule="office_hunting" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.42352941179999998" green="0.70980392160000005" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

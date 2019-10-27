@@ -34,7 +34,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         self.msgTable.delegate = self
         self.msgTable.dataSource = self
-        
+        self.msgTable.separatorStyle = .none
         self.msgTable.register(UINib(nibName: "EmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
         self.msgTable.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "msgCell")
     }
@@ -56,7 +56,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         if self.dmodel.count == 0 {
             return 1
         }else{
-            return self.dmodel.count
+            return 1//self.dmodel.count
         }
     }
     
@@ -79,9 +79,11 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
             cell.companyName.font = UIFont(name: "Roboto-Bold", size: 14)
             if dmodel.count > 0 {
                 cell.companySub.text = (dmodel[indexPath.row].adCompanyTitle ?? "") + "が届きました"
+                cell.adText = dmodel[indexPath.row].adTextForm ?? ""
             }
             cell.postDate.text = "2019/10/26"
-            cell.companyIcon.image = UIImage(named: "dummyicon.png")
+            cell.companyIcon.image = UIImage(named: "FUN_logo.png")
+            
             return cell
         }
     }
@@ -104,7 +106,8 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.get("adCompanyTitle")
-                    self.dmodel.append(dataModel(adCompanyTitle: data as! String))
+                    let inText = document.get("adTextForm")
+                    self.dmodel.append(dataModel(adCompanyTitle: data as! String, adTextForm: inText as! String))
                 }
                 self.msgTable.reloadData()
             }

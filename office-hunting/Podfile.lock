@@ -136,7 +136,7 @@ DEPENDENCIES:
   - MessageKit
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -192,4 +192,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9935d5359d601b2fce2c0b745e8f1fea4dc86901
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.7.5
