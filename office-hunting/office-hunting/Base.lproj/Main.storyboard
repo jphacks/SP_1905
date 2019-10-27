@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccH-2u-5nO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccH-2u-5nO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,61 +15,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdI-a3-Pg7">
-                                <rect key="frame" x="37" y="339" width="341" height="63"/>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdI-a3-Pg7">
+                                <rect key="frame" x="45" y="351" width="325" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Rectangle 3"/>
                                 <connections>
-                                    <segue destination="1r3-U6-jyE" kind="show" id="HtJ-Rw-8W8"/>
+                                    <segue destination="cZy-yy-mSt" kind="presentation" modalPresentationStyle="fullScreen" id="8sN-y5-0yo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="オフィカツ" translatesAutoresizingMaskIntoConstraints="NO" id="3zf-vl-kDp">
-                                <rect key="frame" x="78" y="145" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jobGateIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3zf-vl-kDp">
+                                <rect key="frame" x="45" y="134" width="317" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="アセット 1 1" translatesAutoresizingMaskIntoConstraints="NO" id="B09-Tg-TY2">
-                                <rect key="frame" x="9" y="547" width="396" height="315"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="match" translatesAutoresizingMaskIntoConstraints="NO" id="B09-Tg-TY2">
+                                <rect key="frame" x="-22" y="522" width="464" height="379"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-aI-1t1">
-                                <rect key="frame" x="66" y="456" width="283" height="63"/>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-aI-1t1">
+                                <rect key="frame" x="73" y="437" width="269" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Rectangle 4"/>
+                                <connections>
+                                    <segue destination="51c-Df-CEJ" kind="presentation" modalPresentationStyle="fullScreen" id="JSb-EQ-PAB"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="会員登録する" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-Ck-muQ">
-                                <rect key="frame" x="99" y="432" width="216" height="107"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="ohx-Jb-Wid">
+                                <rect key="frame" x="117" y="333" width="181" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ログインする-1" translatesAutoresizingMaskIntoConstraints="NO" id="ohx-Jb-Wid">
-                                <rect key="frame" x="87" y="306" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="会員登録する" translatesAutoresizingMaskIntoConstraints="NO" id="Vzn-Ck-muQ">
+                                <rect key="frame" x="132" y="430" width="150" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jPk-Zo-NXk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BeV-FX-Az0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2v-eE-LRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119" y="117"/>
+            <point key="canvasLocation" x="1028.985507246377" y="116.51785714285714"/>
         </scene>
-        <!--Message-->
-        <scene sceneID="yuO-VN-Hpe">
+        <!--TinderStoryboard-->
+        <scene sceneID="xlf-t8-Xt2">
             <objects>
-                <viewControllerPlaceholder storyboardName="Message" id="1r3-U6-jyE" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="1ET-v2-H2E"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gfs-wz-Tof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TinderStoryboard" id="cZy-yy-mSt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXP-aE-bde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768" y="96"/>
+            <point key="canvasLocation" x="1683" y="29"/>
+        </scene>
+        <!--AdminStart-->
+        <scene sceneID="SEA-Dd-5ql">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdminStart" id="51c-Df-CEJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kie-Sf-oG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="256"/>
         </scene>
     </scenes>
     <resources>
         <image name="Rectangle 3" width="882" height="177"/>
         <image name="Rectangle 4" width="747" height="150"/>
-        <image name="アセット 1 1" width="1239" height="972"/>
-        <image name="オフィカツ" width="764" height="97"/>
-        <image name="ログインする-1" width="457" height="47"/>
+        <image name="jobGateIcon" width="900" height="624"/>
+        <image name="login" width="457" height="47"/>
+        <image name="match" width="1242" height="1125"/>
         <image name="会員登録する" width="432" height="46"/>
     </resources>
 </document>

@@ -12,27 +12,38 @@ class TinderViewController: UIViewController {
     var index = 0
     
     @IBOutlet weak var kolodaView: KolodaView!
-    //var imageNameArray = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", ]
-
+    var imageNameArray = ["Group36.png", "Group37.png", "Group38.png", "Group39.png", "Group40.png"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.kolodaView.layer.cornerRadius = 15
-        self.kolodaView.backgroundColor = UIColor.black
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        self.navigationItem.titleView = makeMidButton()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func makeMidButton() -> UIButton{
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setBackgroundImage(UIImage(named: "door"), for: .normal)
+        
+        return button
+    }
+    
     
     @IBAction func leftButton(_ sender: Any) {
         kolodaView.swipe(.left)
@@ -47,53 +58,40 @@ class TinderViewController: UIViewController {
 extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
     //枚数
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return 10
+        return imageNameArray.count
     }
-
+    
     //ドラッグのスピード
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return .fast
     }
-
+    
     //表示内容
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         //        let view = UIView(frame: koloda.bounds)
         //        view.backgroundColor = randomColor()
         //        return view
-        /*for subview in koloda.subviews{
-            subview.removeFromSuperview()
-        }*/
-        /*
-        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-        let redView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-        redView.backgroundColor = UIColor.red
-        redView.alpha = 0
-        let blueView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
-        blueView.backgroundColor = UIColor.red
-        blueView.alpha = 0
-        
-        backgroundView.backgroundColor = UIColor.black
-        
-        backgroundView.addSubview(redView)
-        backgroundView.addSubview(blueView)
- */
-        let balloonView = SpeechBalloonView(frame: kolodaView.frame)
-        return balloonView
+        let imageView = UIImageView(frame: koloda.bounds)
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: imageNameArray[index])
+        koloda.addSubview(imageView)
+        imageView.backgroundColor = .clear
+        return imageView
     }
-
+    
     //カードの色を指定、今回はランダム
     func randomColor() -> UIColor {
         return UIColor(red: randomFloat(), green: randomFloat(), blue: randomFloat(), alpha: 1)
     }
-
+    
     //ランダムに色を生成
     func randomFloat() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
-
-
+    
+    
     //delegate------------------
-
+    
     // カードを全て消費したときの処理を定義する
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("Finish cards.")
@@ -102,38 +100,43 @@ extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
         //リスタート
         koloda.resetCurrentCardIndex()
     }
-
+    
     //カードをタップした時に呼ばれる
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         //urlに飛べる
         //UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
         
     }
-
+    
     //dragやめたら呼ばれる
     func kolodaDidResetCard(_ koloda: KolodaView) {
         print("reset")
         //koloda.viewForCard(at: self.index)?.backgroundColor = UIColor.black
     }
-
+    
     //darag中に呼ばれる
     func koloda(_ koloda: KolodaView, shouldDragCardAt index: Int) -> Bool {
         print(index, "drag")
         self.index = index
         return true
     }
-
+    
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        
+        return Bundle.main.loadNibNamed("CustomOverlayView", owner: self, options: nil)![0] as? OverlayView
+    }
+    
     //ドラッグ度合い
     func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
         //print(direction, finishPercentage)
-        /*
-        if (direction == SwipeResultDirection.right) {
-           koloda.viewForCard(at: self.index)?.backgroundColor = UIColor(displayP3Red: finishPercentage / CGFloat(100), green: 0, blue: 0, alpha: finishPercentage / CGFloat(50) )
-        } else {
-            koloda.viewForCard(at: self.index)?.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: finishPercentage / CGFloat(100), alpha: finishPercentage / CGFloat(50))
-        }
- */
-         
+         /*if (direction == SwipeResultDirection.right) {
+            //let image = UIImageView(image: UIImage(named: "good.png"))
+            //koloda.viewForCard(at: self.index)?.addSubview(image)
+            //= UIColor(displayP3Red: finishPercentage / CGFloat(100), green: 0, blue: 0, alpha: finishPercentage / CGFloat(50) )
+         } else {
+         koloda.viewForCard(at: self.index)?.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: finishPercentage / CGFloat(100), alpha: finishPercentage / CGFloat(50))
+         }
+        */
     }
     
     //dtagの方向など
@@ -145,5 +148,5 @@ extension TinderViewController: KolodaViewDelegate, KolodaViewDataSource {
             
         }
     }
-
+    
 }
