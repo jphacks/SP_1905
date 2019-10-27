@@ -10,6 +10,7 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 
+
 class AdminPostformViewController: UIViewController {
     
     
@@ -64,6 +65,10 @@ class AdminPostformViewController: UIViewController {
         adCompanyTitle.text = ""
         adTextForm.text = ""
         adUrl.text = ""
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
