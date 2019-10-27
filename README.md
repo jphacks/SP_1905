@@ -1,6 +1,6 @@
 # ジョブゲイト
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](image.png)](https://youtu.be/rHTCIX8ARho)
 
 ## 製品概要
 ### 就活 × Tech
