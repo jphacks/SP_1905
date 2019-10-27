@@ -154,15 +154,14 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - InputBarAccessoryView
     - Koloda
     - leveldb-library
+    - MessageInputBar
+    - MessageKit
     - nanopb
     - pop
     - Protobuf
-  trunk:
-    - InputBarAccessoryView
-    - MessageInputBar
-    - MessageKit
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
