@@ -56,7 +56,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         if self.dmodel.count == 0 {
             return 1
         }else{
-            return self.dmodel.count
+            return 1//self.dmodel.count
         }
     }
     
