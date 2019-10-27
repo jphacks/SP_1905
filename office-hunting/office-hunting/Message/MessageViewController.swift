@@ -11,22 +11,26 @@ import FirebaseCore
 import FirebaseFirestore
 
 class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    
-    var messageImage: UIImage!
-    var centerImage: UIImageView!
+
     var msgData:[String] = ["ff"]
     let db = Firestore.firestore()
     @IBOutlet weak var msgTable: UITableView!
-    @IBOutlet weak var tinderButton: UIBarButtonItem!
+        
+    @IBOutlet weak var door: UIBarButtonItem!
+    @IBAction func doorButtonAction(_ sender: Any) {
+        let sb = UIStoryboard(name: "TinderStoryboard", bundle: nil)
+               let tinderViewController = sb.instantiateInitialViewController()
+               tinderViewController?.modalPresentationStyle = .fullScreen
+               
+               self.present(tinderViewController!, animated: true, completion: nil)
+    }
+    
     var dmodel = [dataModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavImage()
         
-        self.messageImage = UIImage(named: "message.png")
-        self.centerImage = UIImageView(image: messageImage)
-        self.navigationItem.titleView = centerImage
+        self.navigationItem.titleView = makeMidButton()
         
         self.msgTable.delegate = self
         self.msgTable.dataSource = self
@@ -37,11 +41,15 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "door.png")?.withRenderingMode(.alwaysOriginal),
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: nil)
         getData()
+    }
+    
+    func makeMidButton() -> UIButton{
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setBackgroundImage(UIImage(named: "door"), for: .normal)
+        
+        return button
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,12 +87,6 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         }
         
         // return 44
-    }
-    
-    
-    
-    func setNavImage(){
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func getData(){

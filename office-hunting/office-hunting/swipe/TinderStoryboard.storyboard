@@ -21,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKb-Ix-2q4">
                                 <rect key="frame" x="41" y="712" width="107" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="good.png"/>
+                                <state key="normal" title="Button" image="uun.png"/>
                                 <connections>
                                     <action selector="leftButton:" destination="7ee-aY-Xta" eventType="touchUpInside" id="QlA-sX-ebL"/>
                                 </connections>
@@ -29,7 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-Y0-ehE">
                                 <rect key="frame" x="265" y="712" width="107" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="uun.png"/>
+                                <state key="normal" image="good.png"/>
                                 <connections>
                                     <action selector="rightButton:" destination="7ee-aY-Xta" eventType="touchUpInside" id="uBi-wH-6AW"/>
                                 </connections>
