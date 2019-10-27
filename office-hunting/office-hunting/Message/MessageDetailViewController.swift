@@ -30,6 +30,7 @@ class MessageDetailViewController: UIViewController {
         
         titleBarItem.title = titleText
         self.contentView.layer.cornerRadius = 15
+        self.companyNameLabel.adjustsFontSizeToFitWidth = true
         // Do any additional setup after loading the view.
     }
 

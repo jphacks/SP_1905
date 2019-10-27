@@ -79,9 +79,11 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
             cell.companyName.font = UIFont(name: "Roboto-Bold", size: 14)
             if dmodel.count > 0 {
                 cell.companySub.text = (dmodel[indexPath.row].adCompanyTitle ?? "") + "が届きました"
+                cell.adText = dmodel[indexPath.row].adTextForm ?? ""
             }
             cell.postDate.text = "2019/10/26"
             cell.companyIcon.image = UIImage(named: "FUN_logo.png")
+            
             return cell
         }
     }
@@ -104,7 +106,8 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.get("adCompanyTitle")
-                    self.dmodel.append(dataModel(adCompanyTitle: data as! String))
+                    let inText = document.get("adTextForm")
+                    self.dmodel.append(dataModel(adCompanyTitle: data as! String, adTextForm: inText as! String))
                 }
                 self.msgTable.reloadData()
             }
