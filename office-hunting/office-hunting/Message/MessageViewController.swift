@@ -12,7 +12,6 @@ import FirebaseFirestore
 
 class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
-    var msgData:[String] = ["ff"]
     let db = Firestore.firestore()
     @IBOutlet weak var msgTable: UITableView!
         
@@ -56,14 +55,12 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         if self.dmodel.count == 0 {
             return 1
         }else{
-            return 1//self.dmodel.count
+            return self.dmodel.count
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-       
-                
+    
     }
     
     
@@ -82,7 +79,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 cell.adText = dmodel[indexPath.row].adTextForm ?? ""
             }
             cell.postDate.text = "2019/10/26"
-            cell.companyIcon.image = UIImage(named: "FUN_logo.png")
+            cell.companyIcon.image = UIImage(named: "Group16.png")
             
             return cell
         }
@@ -94,8 +91,6 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         }else{
             return 190
         }
-        
-        // return 44
     }
     
     func getData(){
@@ -113,15 +108,4 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

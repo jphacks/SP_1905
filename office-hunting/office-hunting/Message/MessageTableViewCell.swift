@@ -38,7 +38,6 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     @IBAction func tapMessageDetail(_ sender: UIButton) {
-        print("tap")
         let vc = parentViewController()
         let nextVC = UIStoryboard(name: "Message", bundle: nil).instantiateViewController(identifier: "MessageDetailViewController") as MessageDetailViewController
         nextVC.company = self.companySub.text!
