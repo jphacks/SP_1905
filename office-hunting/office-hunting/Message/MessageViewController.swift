@@ -34,7 +34,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         self.msgTable.delegate = self
         self.msgTable.dataSource = self
-        
+        self.msgTable.separatorStyle = .none
         self.msgTable.register(UINib(nibName: "EmptyTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyCell")
         self.msgTable.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "msgCell")
     }
@@ -74,7 +74,7 @@ class MessageViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 cell.companySub.text = (dmodel[indexPath.row].adCompanyTitle ?? "") + "が届きました"
             }
             cell.postDate.text = "2019/10/26"
-            cell.companyIcon.image = UIImage(named: "dummyicon.png")
+            cell.companyIcon.image = UIImage(named: "FUN_logo.png")
             return cell
         }
     }
