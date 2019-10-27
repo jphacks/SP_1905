@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LaU-sQ-0yf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zib-Zs-dhG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2if-db-4bU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="760"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Dcr-Gh-cmQ">
@@ -39,32 +39,75 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4QF-42-afu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WHN-mg-Tyf"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="WHN-mg-Tyf">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="wHe-e0-M7Y">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WcF-KV-n5K">
+                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="door"/>
+                                <connections>
+                                    <action selector="doorButtonAction:" destination="kz9-bd-p0d" eventType="touchUpInside" id="syw-Fi-4cH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="eCD-hM-evz">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7hF-1j-Hw1">
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="message"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="door" destination="wHe-e0-M7Y" id="hZl-k7-EDJ"/>
                         <outlet property="msgTable" destination="2if-db-4bU" id="bQ3-3z-Bhp"/>
+                        <segue destination="KS5-ge-leQ" kind="show" id="o7o-Ci-VKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqd-Kt-6ZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1905.7971014492755" y="113.83928571428571"/>
         </scene>
-        <!--Custom View Controller-->
-        <scene sceneID="lqf-rK-lN8">
+        <!--Navigation Controller-->
+        <scene sceneID="4SG-mw-rbb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LaU-sQ-0yf" customClass="CustomViewController" customModule="office_hunting" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dxq-s9-g3k">
+                <navigationController id="zib-Zs-dhG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yy1-m2-ln6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.42352941179999998" green="0.70980392160000005" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kz9-bd-p0d" kind="relationship" relationship="rootViewController" id="NCV-sN-tU4"/>
+                        <segue destination="kz9-bd-p0d" kind="relationship" relationship="rootViewController" id="vg7-EX-dBp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2zT-W9-VUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysP-V4-TBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995.65217391304361" y="113.83928571428571"/>
+            <point key="canvasLocation" x="941" y="114"/>
+        </scene>
+        <!--Message Detail View Controller-->
+        <scene sceneID="hDw-NE-sVI">
+            <objects>
+                <viewController id="KS5-ge-leQ" customClass="MessageDetailViewController" customModule="office_hunting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FG5-2l-DJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wiR-zw-gBe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w15-fo-gAd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cS-d7-XGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2847.826086956522" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="door" width="17" height="21.5"/>
+        <image name="message" width="22" height="22"/>
+    </resources>
 </document>
